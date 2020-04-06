@@ -1,0 +1,46 @@
+body{
+    font-family: europa;
+    letter-spacing: .04em;
+}
+.header{
+    padding: 1.5em;
+    display: flex;
+}
+.site-title{
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    display: flex;
+    flex: 1;
+}
+.tab{
+    margin-left:20px;
+}
+.left-nav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    font-size:20px;
+}
+.right-nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex: 1;
+    font-size: 20px;
+    margin-right:20px;
+}
+
+a:link, a:visited{
+    color: #EA5E76;
+    text-decoration: none;
+    transition-duration:140ms;
+}
+
+a:hover{
+    color:black;
+    text-decoration: underline;
+}
