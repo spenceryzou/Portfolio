@@ -33,23 +33,15 @@
             <div class="photo"><img src="images/barca/boats.JPG" alt="" id="box" onclick="openLightbox(this);"/></div>
         </div>
     </div>
-    <!--<div id="lightbox">
+    <div id="lightbox">
         <img src="" id="enlargedImg">
-    </div> temporary comment out for dynamicly created element method on assignemnt-->
+    </div>
     <script type="text/javascript">
         function openLightbox(img) {
-            var lightbox = document.createElement("div");
-            lightbox.id = "lightbox";
-            document.body.appendChild(lightbox);
-            var enlargedImg = document.createElement("img");
-            enlargedImg.id = "enlargedImg";
+            var enlargedImg = document.getElementById("enlargedImg");
             enlargedImg.src = img.src;
-            lightbox.append(enlargedImg);
+            enlargedImg.parentElement.style.display = "block";
             document.getElementById("lightbox").style.display = "block";
-            // var enlargedImg = document.getElementById("enlargedImg"); temporary comment out, dynamic create for assignment
-            // enlargedImg.src = img.src;
-            // enlargedImg.parentElement.style.display = "block";
-            // document.getElementById("lightbox").style.display = "block";
             window.addEventListener("click", e => {
                 if(e.target.tagName != "IMG"){
                     document.getElementById("lightbox").style.display = "none";
