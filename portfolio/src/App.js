@@ -1,7 +1,13 @@
 import React, { Component } from 'react'
+import { Link, Route, Switch } from "react-router-dom";
 import './App.css'
 import TabList from './Components/TabList'
 import Body from './Components/Body'
+import Home from './Components/Home'
+import About from './Components/About'
+import Works from './Components/Works'
+import Photos from './Components/Photos'
+import Fun from './Components/Fun'
 
 export class App extends Component {
   constructor(){
@@ -76,7 +82,7 @@ export class App extends Component {
         </head>
         <div className="body">
           <div class="header">     
-            <h1 class="site-title left-nav"><a href="index.html">Spencer Zou</a></h1>
+            <h1 class="site-title left-nav"><a href="/home">Spencer Zou</a></h1>
             <div class="right-nav">            
                 <TabList tabs={tabs} activeTab={this.state.activeTab} changeTab={this.changeTab}/>
                 {/* <a class="current-tab tab" href="index.html">home</a>
@@ -87,7 +93,13 @@ export class App extends Component {
             </div>
           </div>
           <div className="main-body">
-            <Body activeTab={this.state.activeTab} functions={functions}/>
+              <Route exact path="/" render={(props) => <Home {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
+              <Route path="/home" render={(props) => <Home {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
+              <Route path="/about" render={(props) => <About {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
+              <Route path="/works" render={(props) => <Works {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
+              <Route path="/photos" render={(props) => <Photos {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
+              <Route path="/fun" render={(props) => <Fun {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
+              {/* <Body activeTab={this.state.activeTab} functions={functions}/> */}
           </div>
         </div>
       </div>

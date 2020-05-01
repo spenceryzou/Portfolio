@@ -31,7 +31,7 @@ export default class Photos extends Component {
                         <div class="photo"><img src="images/lake.jpg" alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, "images/lake.jpg")}></img></div>
                         <div class="photo"><img src="images/IMG_5604.jpg" alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, "images/IMG_5604.jpg")}></img></div>
                         <div class="photo"><img src="images/IMG_6211.jpg" alt="" id="boxPortrait" onClick={this.props.functions.openLightbox.bind(this, "images/IMG_6211.jpg")}></img></div> 
-
+                        <div class="photo"><img src="images/street.JPG" alt="" id="boxPortrait" onClick={this.props.functions.openLightbox.bind(this, "images/street.JPG")}></img></div>
                     </div>
                 </div>
                 <div id="lightbox">
