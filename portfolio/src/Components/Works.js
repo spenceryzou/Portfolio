@@ -12,11 +12,11 @@ export default class Works extends Component {
                         Spotifynd Friends is a web app that utilizes the Spotify Web API to
                         analyze and generate compatibility ratings between user's playlists using track
                         audio features.
-                        Using this web app, users can find others who have similar music tastes! <a href="Documentation.pdf" target="_blank">Documentation</a><br></br>
+                        Using this web app, users can find others who have similar music tastes! <a href={process.env.PUBLIC_URL + "/Documentation.pdf"} target="_blank">Documentation</a><br></br>
                     </div>
                     <div class="content-body-image">
                         <a href="https://spotifynd-friends.herokuapp.com/">
-                            <img src="images/project.jpg"></img>
+                            <img src={process.env.PUBLIC_URL + "/images/project.jpg"}></img>
                         </a>
                     </div>
                 </div>

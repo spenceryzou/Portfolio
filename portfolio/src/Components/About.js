@@ -6,7 +6,7 @@ export default class About extends Component {
             <div class="content" style={{marginTop: '1vw'}}>
                 <div class="about-content-body">                    
                     <div id="aboutImg" class="content-body-image about-image">
-                        <img src="images/lobster2.png"></img>
+                        <img src={process.env.PUBLIC_URL + "/images/lobster2.png"}></img>
                     </div>         
                     <div class="content-body-text about-text">            
                         <div class="content-title" style={{color:"#ea5e76"}}>

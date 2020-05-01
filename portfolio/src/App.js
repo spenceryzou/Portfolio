@@ -82,7 +82,8 @@ export class App extends Component {
         </head>
         <div className="body">
           <div class="header">     
-            <h1 class="site-title left-nav"><a href="/home">Spencer Zou</a></h1>
+            <h1 class="site-title left-nav">
+            <Link to="/home" onClick={this.changeTab.bind(this, 1)}>Spencer Zou</Link></h1>
             <div class="right-nav">            
                 <TabList tabs={tabs} activeTab={this.state.activeTab} changeTab={this.changeTab}/>
                 {/* <a class="current-tab tab" href="index.html">home</a>

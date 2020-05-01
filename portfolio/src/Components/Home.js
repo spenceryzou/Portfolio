@@ -19,7 +19,7 @@ export default class Home extends Component {
                         In my free time, I like to read fashion blogs, play soccer, drink boba, and sing! */}
                     </div>        
                     <div class="content-body-image">
-                        <img style={{paddingLeft: '1vw'}} src="images/cutoutblur.jpg"></img>
+                        <img style={{paddingLeft: '1vw'}} src={process.env.PUBLIC_URL + '/images/cutoutblur.jpg'}></img>
                     </div>
                 </div>
             </div>

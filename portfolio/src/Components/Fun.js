@@ -49,22 +49,22 @@ export default class Fun extends Component {
             <div class="content-body-grid4">
                 <FadeInSection>
                 <div class="content-body-image">
-                    <img src="images/IMG_4588.jpeg"></img>
+                    <img src={process.env.PUBLIC_URL + "/images/IMG_4588.jpeg"}></img>
                 </div>
                 </FadeInSection>
                 <FadeInSection>
                 <div class="content-body-image">
-                    <img src="images/photoshopmagic1.png"></img>
+                    <img src={process.env.PUBLIC_URL + "/images/photoshopmagic1.png"}></img>
                 </div>  
                 </FadeInSection>
                 <FadeInSection>   
                 <div class="content-body-image">
-                    <img src="images/IMG_5952.JPG"></img>
+                    <img src={process.env.PUBLIC_URL + "/images/IMG_5952.JPG"}></img>
                 </div>
                 </FadeInSection>
                 <FadeInSection>
                 <div class="content-body-image">
-                    <img src="images/photoshopmagic2.jpg"></img>
+                    <img src={process.env.PUBLIC_URL + "/images/photoshopmagic2.jpg"}></img>
                 </div>
                 </FadeInSection>         
             </div>
