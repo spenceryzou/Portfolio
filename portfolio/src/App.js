@@ -94,6 +94,7 @@ export class App extends Component {
           </div>
           <div className="main-body">
               <Route exact path="/" render={(props) => <Home {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
+              <Route exact path="/portfolio" render={(props) => <Home {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               <Route path="/home" render={(props) => <Home {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               <Route path="/about" render={(props) => <About {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               <Route path="/works" render={(props) => <Works {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
