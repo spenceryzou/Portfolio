@@ -48,25 +48,25 @@ export default class Photos extends Component {
                         <div class="photo"><img src={process.env.PUBLIC_URL + "/images/IMG_5504_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/IMG_5504_1200.jpg")}></img></div>
                         </FadeInSection>
                         <FadeInSection>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/sagrada_1200.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/sagrada_1200.JPG")}></img></div>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/sagrada_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/sagrada_1200.jpg")}></img></div>
                         </FadeInSection>
                         <FadeInSection>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/market_1200.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/market_1200.JPG")}></img></div>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/market_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/market_1200.jpg")}></img></div>
                         </FadeInSection>
                         <FadeInSection>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/casamila_1200.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/casamila_1200.JPG")}></img></div>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/casamila_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/casamila_1200.jpg")}></img></div>
                         </FadeInSection>
                         <FadeInSection>
                         <div class="photo"><img src={process.env.PUBLIC_URL + "/images/lakedad_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/lakedad_1200.jpg")}></img></div>
                         </FadeInSection>
                         <FadeInSection>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/boats_1200.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/boats_1200.JPG")}></img></div>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/boats_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/boats_1200.jpg")}></img></div>
                         </FadeInSection>
                         <FadeInSection>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/cityscape_1200.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/cityscape_1200.JPG")}></img></div>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/cityscape_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/cityscape_1200.jpg")}></img></div>
                         </FadeInSection>
                         <FadeInSection>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/stain_1200.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/stain_1200.JPG")}></img></div>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/stain_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/stain_1200.jpg")}></img></div>
                         </FadeInSection>
                         <FadeInSection>
                         <div class="photo"><img src={process.env.PUBLIC_URL + "/images/lake_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/lake_1200.jpg")}></img></div>
@@ -78,7 +78,7 @@ export default class Photos extends Component {
                         <div class="photo"><img src={process.env.PUBLIC_URL + "/images/IMG_6211_1200.jpg"} alt="" id="boxPortrait" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/IMG_6211_1200.jpg")}></img></div> 
                         </FadeInSection>
                         <FadeInSection>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/street_1200.JPG"} alt="" id="boxPortrait" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/street_1200.JPG")}></img></div>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/street_1200.jpg"} alt="" id="boxPortrait" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/street_1200.jpg")}></img></div>
                         </FadeInSection>
                     </div>
                 </div>
