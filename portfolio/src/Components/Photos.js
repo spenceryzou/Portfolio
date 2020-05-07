@@ -1,5 +1,29 @@
 import React, { Component } from 'react'
 
+function FadeInSection(props) {
+    const [isVisible, setVisible] = React.useState(false);
+    const domRef = React.useRef();
+    React.useEffect(() => {
+      const observer = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            // Not possible to set it back to false like this:
+            setVisible(true);
+            // No need to keep observing:
+            observer.unobserve(domRef.current);
+          }
+      });
+      observer.observe(domRef.current);
+      return () => observer.unobserve(domRef.current);
+    }, []);
+    return (
+      <div
+        className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+        ref={domRef}
+      >
+        {props.children}
+      </div>
+    );
+}
 export default class Photos extends Component {
     constructor(props){
         super(props);
@@ -20,18 +44,42 @@ export default class Photos extends Component {
                 </div>
                 <div class="content">
                     <div class="gallery-container">
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/IMG_5504.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/IMG_5504.jpg")}></img></div>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/barca/sagrada.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/barca/sagrada.JPG")}></img></div>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/barca/market.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/barca/market.JPG")}></img></div>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/barca/casamila.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/barca/casamila.JPG")}></img></div>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/lakedad.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/lakedad.jpg")}></img></div>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/barca/boats.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/barca/boats.JPG")}></img></div>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/barca/cityscape.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/barca/cityscape.JPG")}></img></div>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/barca/stain.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/barca/stain.JPG")}></img></div>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/lake.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/lake.jpg")}></img></div>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/IMG_5604.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/IMG_5604.jpg")}></img></div>
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/IMG_6211.jpg"} alt="" id="boxPortrait" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/IMG_6211.jpg")}></img></div> 
-                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/street.JPG"} alt="" id="boxPortrait" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/street.JPG")}></img></div>
+                        <FadeInSection>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/IMG_5504_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/IMG_5504_1200.jpg")}></img></div>
+                        </FadeInSection>
+                        <FadeInSection>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/barca/sagrada_1200.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/barca/sagrada_1200.JPG")}></img></div>
+                        </FadeInSection>
+                        <FadeInSection>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/barca/market_1200.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/barca/market_1200.JPG")}></img></div>
+                        </FadeInSection>
+                        <FadeInSection>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/barca/casamila_1200.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/barca/casamila_1200.JPG")}></img></div>
+                        </FadeInSection>
+                        <FadeInSection>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/lakedad_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/lakedad_1200.jpg")}></img></div>
+                        </FadeInSection>
+                        <FadeInSection>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/barca/boats_1200.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/barca/boats_1200.JPG")}></img></div>
+                        </FadeInSection>
+                        <FadeInSection>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/barca/cityscape_1200.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/barca/cityscape_1200.JPG")}></img></div>
+                        </FadeInSection>
+                        <FadeInSection>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/barca/stain_1200.JPG"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/barca/stain_1200.JPG")}></img></div>
+                        </FadeInSection>
+                        <FadeInSection>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/lake_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/lake_1200.jpg")}></img></div>
+                        </FadeInSection>
+                        <FadeInSection>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/IMG_5604_1200.jpg"} alt="" id="box" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/IMG_5604_1200.jpg")}></img></div>
+                        </FadeInSection>
+                        <FadeInSection>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/IMG_6211_1200.jpg"} alt="" id="boxPortrait" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/IMG_6211_1200.jpg")}></img></div> 
+                        </FadeInSection>
+                        <FadeInSection>
+                        <div class="photo"><img src={process.env.PUBLIC_URL + "/images/street_1200.JPG"} alt="" id="boxPortrait" onClick={this.props.functions.openLightbox.bind(this, process.env.PUBLIC_URL + "/images/street_1200.JPG")}></img></div>
+                        </FadeInSection>
                     </div>
                 </div>
                 <div id="lightbox">

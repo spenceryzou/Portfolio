@@ -184,7 +184,7 @@ a:hover{
   justify-items: center;
 }
 .photo{
-  transition-duration:.4s;
+  transition-duration:.3s;
 }
 .photo:hover{
   -moz-transform: scale(1.05);
@@ -192,12 +192,25 @@ a:hover{
   -ms-transform: scale(1.05);
   transform: scale(1.05);
   cursor: pointer;
+
 }
 #box{
   max-width:100%;
   object-fit: cover;
   height:333px;
-  border-radius: 4px;
+  border-radius: 4px;  
+}
+#box:hover{
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,.16);
+}
+
+#card{
+  border-radius: 16px;
+  background-color: #2fce74;
+}
+
+#card:hover{
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,.16);
 }
 #boxPortrait{
   object-fit:cover;
@@ -205,6 +218,9 @@ a:hover{
   height:333px;
   border-radius: 4px;
   object-position: 50% 20%;
+}
+#boxPortrait:hover{
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,.16);
 }
 
 #lightbox{
@@ -248,6 +264,12 @@ a:hover{
   -webkit-transform: translateY(-10px);
   transform: translateY(-10px);
 }
+.works-text{
+  -webkit-animation: fade-in 1.2s cubic-bezier(.4,0,.2,1) forwards;
+  animation: fade-in 1.2s cubic-bezier(.4,0,.2,1) forwards;
+  animation-delay: .5s;
+  opacity: 0;
+}
 .about-text{
   padding-bottom: 8em;
 }
@@ -288,7 +310,7 @@ a:hover{
 
 .fade-in-section {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(80px);
   visibility: hidden;
   transition: opacity 1200ms ease 0s, transform 1200ms ease 0s;
   will-change: opacity, visibility;

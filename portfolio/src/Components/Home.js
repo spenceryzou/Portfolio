@@ -1,21 +1,7 @@
 import React, { Component } from 'react'
 
 export default class Home extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            didLoad: false
-        }
-    }
-    onLoad = () => {
-        this.setState({
-            didLoad: true
-        })
-    }
-
     render() {
-        const loadImg = this.state.didLoad ? {} : {visibility: 'hidden'}
         return (
             <div class="content" style={{marginTop: '1vw'}}>
                 <div class="content-body home-content-body">         
@@ -33,7 +19,7 @@ export default class Home extends Component {
                         In my free time, I like to read fashion blogs, play soccer, drink boba, and sing! */}
                     </div>        
                     <div class="content-body-image">
-                        <img onLoad={this.onLoad} style={{...loadImg, paddingLeft: '1vw'}} src={process.env.PUBLIC_URL + '/images/cutoutblur.jpg' }></img>
+                        <img src={process.env.PUBLIC_URL + '/images/cutoutblurcompress.jpg' }></img>
                     </div>
                 </div>
             </div>

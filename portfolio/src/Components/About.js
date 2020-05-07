@@ -1,26 +1,12 @@
 import React, { Component } from 'react'
 
 export default class About extends Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            didLoad: false
-        }
-    }
-    onLoad = () => {
-        this.setState({
-            didLoad: true
-        })
-    }
-
     render() {
-        const loadImg = this.state.didLoad ? {} : {visibility: 'hidden'}
         return (
             <div class="content" style={{marginTop: '1vw'}}>
                 <div class="about-content-body">                    
                     <div id="aboutImg" class="content-body-image about-image">
-                        <img onLoad={this.onLoad} style={{loadImg}} src={process.env.PUBLIC_URL + "/images/lobster2.png"}></img>
+                        <img src={process.env.PUBLIC_URL + "/images/lobster3.png"}></img>
                     </div>         
                     <div class="content-body-text about-text">            
                         <div class="content-title" style={{color:"#ea5e76"}}>

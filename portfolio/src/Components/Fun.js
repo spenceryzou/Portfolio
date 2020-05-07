@@ -49,7 +49,7 @@ export default class Fun extends Component {
             <div class="content-body-grid4">
                 <FadeInSection>
                 <div class="content-body-image">
-                    <img src={process.env.PUBLIC_URL + "/images/IMG_4588.jpeg"}></img>
+                    <img src={process.env.PUBLIC_URL + "/images/IMG_4588.JPG"}></img>
                 </div>
                 </FadeInSection>
                 <FadeInSection>
