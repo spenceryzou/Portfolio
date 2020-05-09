@@ -256,6 +256,44 @@ a:hover{
   animation: fadeIn 1s;
   -webkit-animation: fadeIn 1s;
 }
+.errors{
+  color:red;
+}
+.guestbook-form{
+  height: 550px;
+  overflow-y: auto;
+  -webkit-animation: fade-in 1.2s cubic-bezier(.4,0,.2,1) forwards;
+  animation: fade-in 1.2s cubic-bezier(.4,0,.2,1) forwards;
+  animation-delay: .5s;
+  opacity: 0;
+}
+.guestbook-entries{
+  height: 550px;
+  font-size: 20px;
+  max-width: 100%;
+  overflow-y: auto;
+}
+
+.entry-title{
+  display: flex;
+  font-weight: bold;
+  align-items: center;
+}
+.entry-description{
+  display: block;
+  font-size: 16px;
+  color: rgb(143, 143, 143);
+  font-weight: normal;
+  margin-top: 4px;
+  overflow-wrap: break-word;
+}
+.entry-date{
+  font-size: 16px;
+  color: rgb(143, 143, 143);
+}
+.entry-message{
+  font-size: 16px;
+}
 
 .home-content-body{
   -webkit-animation: fade-in 1.2s cubic-bezier(.4,0,.2,1) forwards;

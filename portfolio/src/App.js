@@ -8,12 +8,16 @@ import About from './Components/About'
 import Works from './Components/Works'
 import Photos from './Components/Photos'
 import Fun from './Components/Fun'
+import Guestbook from './Components/Guestbook'
+import config from './config.js'
+const firebase = require('firebase')
 
 export class App extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state ={
-      activeTab: 1
+      activeTab: 1,
+      data: {}
     }
     this.changeTab = (id) => {
       this.setState({
@@ -45,6 +49,22 @@ export class App extends Component {
         })
     }
   }
+  // componentDidMount(){
+  //     firebase.initializeApp(config)
+  //     let ref = firebase.ref('data')
+  //     ref.on('value', snapshot => {
+  //       const data = snapshot.val()
+  //       this.setState({data: data})
+  //     })
+  // }
+
+  // componentDidUpdate(prevProps, prevState, snapshot){
+	//   //only call set state here if it is wrapped in a condition
+	//   //if you initialize this.state.shouldUpdate and have not changed it yet then this will not run
+	//   if(this.state.shouldUpdate != prevState.shouldUpdate){
+	// 	//same code as above to retrieve the data 
+	//   }
+  // }
   
   render() {
     const functions = {
@@ -72,6 +92,10 @@ export class App extends Component {
       {
         id: 5,
         title: 'fun'
+      },
+      {
+        id: 6,
+        title: 'guestbook'
       }
     ]
     return (
@@ -101,6 +125,7 @@ export class App extends Component {
               <Route path="/works" render={(props) => <Works {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               <Route path="/photos" render={(props) => <Photos {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               <Route path="/fun" render={(props) => <Fun {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
+              <Route path="/guestbook" render={(props) => <Guestbook {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               {/* <Body activeTab={this.state.activeTab} functions={functions}/> */}
           </div>
         </div>

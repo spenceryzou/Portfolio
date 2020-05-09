@@ -4,6 +4,7 @@ import About from './About'
 import Works from './Works'
 import Photos from './Photos'
 import Fun from './Fun'
+import Guestbook from './Guestbook'
 
 export class Body extends Component {
     displayContent = () => {
@@ -16,8 +17,10 @@ export class Body extends Component {
             return <Works/>
         else if(activeTab === 4)
             return <Photos functions={this.props.functions}/>
-        else
+        else if(activeTab === 5)
             return <Fun/>
+        else
+            return <Guestbook/>
     }
     render() {
         return (this.displayContent());
