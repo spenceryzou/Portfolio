@@ -215,7 +215,7 @@ a:hover{
 }
 #poster:hover{
   cursor: pointer;
-  opacity: 50%;
+  opacity: .6;
 }
 #box{
   max-width:100%;

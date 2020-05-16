@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 const axios = require('axios')
 const arrMovie = ['tt3783958', 'tt0080684', 'tt8637428','tt1302011','tt4633694','tt2488496','tt3501632','tt2584384']
 const instance = axios.create({
-    baseURL: 'http://www.omdbapi.com/',
+    baseURL: 'https://www.omdbapi.com/',
 });
 const apikey = '45f2b795'
 
