@@ -9,6 +9,7 @@ import Works from './Components/Works'
 import Photos from './Components/Photos'
 import Fun from './Components/Fun'
 import Guestbook from './Components/Guestbook'
+import Movies from './Components/Movies'
 import config from './config.js'
 const firebase = require('firebase')
 
@@ -48,6 +49,27 @@ export class App extends Component {
             }
         })
     }
+    this.openMovieLightbox = (src, title, director, imbd) => {
+      document.body.style.overflow='hidden';
+      var enlargedImg = document.getElementById("enlargedImg");
+      enlargedImg.src = src;
+      enlargedImg.parentElement.style.display = "block";
+      var movieTitle = document.getElementById("movieTitle");
+      movieTitle.textContent = title;
+      var movieDirector = document.getElementById("movieDirector");
+      movieDirector.textContent = director;
+      var movieimbd = document.getElementById("movieRating");
+      movieimbd.textContent = imbd;
+      document.getElementById("lightbox").style.display = "block";
+      window.addEventListener("click", function handler(e) {
+          if(e.target.tagName != "IMG"){
+              document.body.style.overflow='auto';
+              document.getElementById("lightbox").style.display = "none";
+              this.removeEventListener('click', handler)
+          }
+      })
+
+  }
   }
   // componentDidMount(){
   //     firebase.initializeApp(config)
@@ -70,7 +92,8 @@ export class App extends Component {
     const functions = {
       openLightbox: this.openLightbox,
       toTop: this.toTop,
-      handleScroll: this.handleScroll
+      handleScroll: this.handleScroll,
+      openMovieLightbox: this.openMovieLightbox
     }
     const tabs = [
       {
@@ -96,6 +119,10 @@ export class App extends Component {
       {
         id: 6,
         title: 'guestbook'
+      },
+      {
+        id: 7,
+        title: 'movies'
       }
     ]
     return (
@@ -126,6 +153,7 @@ export class App extends Component {
               <Route path="/photos" render={(props) => <Photos {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               <Route path="/fun" render={(props) => <Fun {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               <Route path="/guestbook" render={(props) => <Guestbook {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
+              <Route path="/movies" render={(props) => <Movies {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               {/* <Body activeTab={this.state.activeTab} functions={functions}/> */}
           </div>
         </div>
