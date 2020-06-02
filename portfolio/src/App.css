@@ -194,6 +194,10 @@ a:hover{
   align-items: center;
   justify-items: center;
 }
+.select-container{
+  margin-left: 20vw;
+  margin-bottom: 10px;
+}
 .movieDetails{
   color: white;
   text-align: center;
@@ -255,18 +259,26 @@ a:hover{
   background:rgba(0, 0, 0, .8);
   display:none;
 }
-
-#lightbox img{
-  position: fixed;
-  max-width: 50%;
-  max-height: 75%;
-  z-index: 100;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.lightbox-container{
+  background-color: black;
+  position: absolute;
+  justify-content: center;
+  flex-direction: column;
+  left: 25%;
+  top: 15%;
+  min-width: 50%;
+}
+.lightbox-container img{
+  max-width: 300px;
+  justify-self: center;
+  align-self: center;;
 }
 .lightbox-img-wrapper{
-  height: 85%;
+  height: 100%;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
 #topBtn{
@@ -292,6 +304,10 @@ a:hover{
   animation: fade-in 1.2s cubic-bezier(.4,0,.2,1) forwards;
   animation-delay: .5s;
   opacity: 0;
+}
+.addmovie-form{
+  height: 550px;
+  overflow-y: auto;
 }
 .guestbook-entries{
   height: 550px;

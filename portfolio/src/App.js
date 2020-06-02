@@ -10,6 +10,8 @@ import Photos from './Components/Photos'
 import Fun from './Components/Fun'
 import Guestbook from './Components/Guestbook'
 import Movies from './Components/Movies'
+import AddMovie from './Components/AddMovie'
+import CreateList from './Components/CreateList'
 import config from './config.js'
 const firebase = require('firebase')
 
@@ -18,7 +20,8 @@ export class App extends Component {
     super(props);
     this.state ={
       activeTab: 1,
-      data: {}
+      data: {},
+      lightboxID:""
     }
     this.changeTab = (id) => {
       this.setState({
@@ -49,27 +52,31 @@ export class App extends Component {
             }
         })
     }
-    this.openMovieLightbox = (src, title, director, imbd) => {
-      document.body.style.overflow='hidden';
-      var enlargedImg = document.getElementById("enlargedImg");
-      enlargedImg.src = src;
-      enlargedImg.parentElement.style.display = "block";
-      var movieTitle = document.getElementById("movieTitle");
-      movieTitle.textContent = title;
-      var movieDirector = document.getElementById("movieDirector");
-      movieDirector.textContent = director;
-      var movieimbd = document.getElementById("movieRating");
-      movieimbd.textContent = imbd;
-      document.getElementById("lightbox").style.display = "block";
-      window.addEventListener("click", function handler(e) {
-          if(e.target.tagName != "IMG"){
-              document.body.style.overflow='auto';
-              document.getElementById("lightbox").style.display = "none";
-              this.removeEventListener('click', handler)
-          }
-      })
+  //   this.openMovieLightbox = (src, title, director, imbd, imdbid) => {
+  //     document.body.style.overflow='hidden';
+  //     var enlargedImg = document.getElementById("enlargedImg");
+  //     enlargedImg.src = src;
+  //     enlargedImg.parentElement.style.display = "flex";
+  //     var lightboxWrapper = document.getElementById("lightbox-wrapper");
+  //     // lightboxWrapper.innerHTML = lightboxWrapper.innerHTML + '<span>' + title + director + imbd + '</span>';
+  //     // var c = lightboxWrapper.childNodes;
+  //     var movieTitle = document.getElementById("movieTitle");
+  //     movieTitle.textContent = title;
+  //     var movieDirector = document.getElementById("movieDirector");
+  //     movieDirector.textContent = director;
+  //     var movieimbd = document.getElementById("movieRating");
+  //     movieimbd.textContent = imbd;
+  //     document.getElementById("lightbox").style.display = "block";
+  //     window.addEventListener("click", function handler(e) {
+  //         if(e.target.tagName != "IMG"){
+  //             // c[1].textContent = "";
+  //             document.body.style.overflow='auto';
+  //             document.getElementById("lightbox").style.display = "none";
+  //             this.removeEventListener('click', handler)
+  //         }
+  //     })
 
-  }
+  // }
   }
   // componentDidMount(){
   //     firebase.initializeApp(config)
@@ -93,7 +100,7 @@ export class App extends Component {
       openLightbox: this.openLightbox,
       toTop: this.toTop,
       handleScroll: this.handleScroll,
-      openMovieLightbox: this.openMovieLightbox
+      //openMovieLightbox: this.openMovieLightbox
     }
     const tabs = [
       {
@@ -123,6 +130,14 @@ export class App extends Component {
       {
         id: 7,
         title: 'movies'
+      },
+      {
+        id: 8,
+        title: 'addmovie'
+      },
+      {
+        id: 9,
+        title: 'createlist'
       }
     ]
     return (
@@ -154,6 +169,8 @@ export class App extends Component {
               <Route path="/fun" render={(props) => <Fun {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               <Route path="/guestbook" render={(props) => <Guestbook {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               <Route path="/movies" render={(props) => <Movies {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
+              <Route path="/addmovie" render={(props) => <AddMovie {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
+              <Route path="/createlist" render={(props) => <CreateList {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               {/* <Body activeTab={this.state.activeTab} functions={functions}/> */}
           </div>
         </div>
