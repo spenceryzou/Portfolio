@@ -12,6 +12,7 @@ import Guestbook from './Components/Guestbook'
 import Movies from './Components/Movies'
 import AddMovie from './Components/AddMovie'
 import CreateList from './Components/CreateList'
+import Graph from './Components/Graph'
 import config from './config.js'
 const firebase = require('firebase')
 
@@ -138,6 +139,10 @@ export class App extends Component {
       {
         id: 9,
         title: 'createlist'
+      },
+      {
+        id: 10,
+        title: 'graph'
       }
     ]
     return (
@@ -171,6 +176,7 @@ export class App extends Component {
               <Route path="/movies" render={(props) => <Movies {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               <Route path="/addmovie" render={(props) => <AddMovie {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               <Route path="/createlist" render={(props) => <CreateList {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
+              <Route path="/graph" render={(props) => <Graph {...props} activeTab={this.state.activeTab} functions={functions}/>}/>
               {/* <Body activeTab={this.state.activeTab} functions={functions}/> */}
           </div>
         </div>
